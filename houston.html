@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houston Truck Wash Locations | SemiWash</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">SemiWash</a>
+            </div>
+            <div class="nav-right">
+                <a href="list-location.html" class="list-location-btn">List your location</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="city-locations">
+            <h1>Truck Wash Locations in Houston</h1>
+            <div class="locations-grid">
+                <!-- Locations will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SemiWash</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Business</h3>
+                <ul>
+                    <li><a href="#">List Your Location</a></li>
+                    <li><a href="#">Partner With Us</a></li>
+                    <li><a href="#">Advertise</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SemiWash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const locationsGrid = document.querySelector('.locations-grid');
+            const houstonLocations = cityDirectory.houston;
+
+            locationsGrid.innerHTML = houstonLocations.map(location => `
+                <div class="location-detail-card">
+                    <div class="location-info">
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">4.8</span>
+                        </div>
+                        <h2>${location.name}</h2>
+                        <p class="address"><i class="fas fa-map-marker-alt"></i> ${location.address}</p>
+                        <p class="hours"><i class="far fa-clock"></i> ${location.hours}</p>
+                        <p class="phone"><i class="fas fa-phone"></i> ${location.phone}</p>
+                        <a href="${location.website}" target="_blank" class="website-btn">
+                            <i class="fas fa-globe"></i> Visit Website
+                        </a>
+                        <div class="price">Starting from <strong>$49.99</strong> / wash</div>
+                        <a href="#" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html> 

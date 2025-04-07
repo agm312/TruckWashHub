@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Service Quote - SemiWash</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html"><h2>SemiWash</h2></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="list-location-page">
+        <div class="container">
+            <section class="list-location-content">
+                <h1>Request Fleet Service Quote</h1>
+                <p class="subtitle">Custom solutions for fleet operators - volume discounts available</p>
+
+                <form name="fleet-quote" method="POST" data-netlify="true" class="listing-form">
+                    <input type="hidden" name="form-name" value="fleet-quote">
+                    
+                    <div class="form-group">
+                        <label for="companyName">Company Name *</label>
+                        <input type="text" id="companyName" name="companyName" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Contact Name *</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fleetSize">Fleet Size *</label>
+                        <select id="fleetSize" name="fleetSize" required>
+                            <option value="">Select fleet size</option>
+                            <option value="5-10">5-10 Trucks</option>
+                            <option value="11-25">11-25 Trucks</option>
+                            <option value="26-50">26-50 Trucks</option>
+                            <option value="51-100">51-100 Trucks</option>
+                            <option value="100+">More than 100 Trucks</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceFrequency">Service Frequency *</label>
+                        <select id="serviceFrequency" name="serviceFrequency" required>
+                            <option value="">Select frequency</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="bi-weekly">Bi-Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="custom">Custom Schedule</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceLocation">Primary Service Location *</label>
+                        <input type="text" id="serviceLocation" name="serviceLocation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Service Type Required *</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Select service type</option>
+                            <option value="exterior">Exterior Only</option>
+                            <option value="full">Full Service (Interior & Exterior)</option>
+                            <option value="custom">Custom Package</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Please provide any specific requirements or questions"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request Quote</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 SemiWash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

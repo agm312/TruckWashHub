@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Location - SemiWash</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html"><h2>SemiWash</h2></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="list-location-page">
+        <div class="container">
+            <section class="list-location-content">
+                <h1>List Your Truck Wash Location</h1>
+                <p class="subtitle">Join our network of trusted truck wash facilities and reach more customers</p>
+
+                <form name="location-listing" method="POST" data-netlify="true" class="listing-form">
+                    <input type="hidden" name="form-name" value="location-listing">
+                    
+                    <div class="form-group">
+                        <label for="businessName">Business Name *</label>
+                        <input type="text" id="businessName" name="businessName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Full Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website (optional)</label>
+                        <input type="url" id="website" name="website">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="services">Services Offered *</label>
+                        <select id="services" name="services" required>
+                            <option value="">Select service type</option>
+                            <option value="local">Local Facility</option>
+                            <option value="mobile">Mobile Service</option>
+                            <option value="both">Both Local & Mobile</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Listing</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 SemiWash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

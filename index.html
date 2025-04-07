@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover top semi truck wash locations and book mobile washes easily. Fast, reliable service for your fleet.">
+    
+    <!-- SEO Meta Tags -->
+    <title>Semi Truck Wash - Local & Mobile Cleaning Services</title>
+    <meta name="keywords" content="semi truck wash, truck wash near me, mobile truck wash, commercial truck cleaning">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Semi Truck Wash - Local & Mobile Services">
+    <meta property="og:description" content="Professional semi truck washing services - both local facilities and mobile options available.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero-truck-wash.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h2>SemiWash</h2>
+            </div>
+            <div class="nav-right">
+                <a href="list-location.html" class="nav-btn">List your location</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Search Section -->
+        <section class="hero-search">
+            <div class="hero-content">
+                <h1>Find the perfect truck wash</h1>
+                <p>Book local facilities or mobile services across the USA</p>
+                
+                <div class="search-container">
+                    <form class="search-box" id="searchForm" onsubmit="return false;">
+                        <div class="search-input">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="locationInput" placeholder="Enter your city (e.g., Dallas, Chicago)" required>
+                        </div>
+                        <div class="search-input">
+                            <i class="fas fa-calendar"></i>
+                            <input type="date" id="dateInput" required>
+                        </div>
+                        <div class="search-input">
+                            <i class="fas fa-truck"></i>
+                            <select id="serviceSelect" required>
+                                <option value="">Service Type</option>
+                                <option value="Local Wash">Local Wash</option>
+                                <option value="Mobile Service">Mobile Service</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="search-btn" id="searchButton">Search</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Types Section -->
+        <section class="service-types">
+            <div class="container">
+                <h2>Browse by service type</h2>
+                <div class="service-grid">
+                    <div class="service-card" data-service="local">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>Local Facilities</h3>
+                        <p>Professional truck wash facilities at convenient locations</p>
+                        <p class="price">From $49.99</p>
+                        <button class="view-service-btn">View Locations</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="mobile">
+                        <i class="fas fa-truck"></i>
+                        <h3>Mobile Service</h3>
+                        <p>We come to you - wash service at your location</p>
+                        <p class="price">From $89.99</p>
+                        <button class="view-service-btn">Book Mobile Service</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="fleet">
+                        <i class="fas fa-users"></i>
+                        <h3>Fleet Service</h3>
+                        <p>Customized solutions for fleet operators</p>
+                        <p class="price">Custom Pricing</p>
+                        <button class="view-service-btn">Request Quote</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="express">
+                        <i class="fas fa-clock"></i>
+                        <h3>Express Wash</h3>
+                        <p>Quick and efficient wash service</p>
+                        <p class="price">From $39.99</p>
+                        <button class="view-service-btn">Find Express Wash</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Details Sections -->
+            <div class="service-details-container">
+                <!-- Local Facilities Details -->
+                <div id="local-details" class="service-details">
+                    <div class="container">
+                        <h3>Local Truck Wash Facilities</h3>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Professional equipment and facilities</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Multiple bays for quick service</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Experienced wash technicians</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Service Details -->
+                <div id="mobile-details" class="service-details">
+                    <div class="container">
+                        <h3>Mobile Truck Wash Service</h3>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Service at your location</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Flexible scheduling</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Full equipment on-site</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet Service Details -->
+                <div id="fleet-details" class="service-details">
+                    <div class="container">
+                        <h3>Fleet Wash Solutions</h3>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Custom scheduling for fleets</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Volume discounts available</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Dedicated account manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Express Wash Details -->
+                <div id="express-details" class="service-details">
+                    <div class="container">
+                        <h3>Express Wash Service</h3>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>30-minute service guarantee</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Basic wash and rinse</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Perfect for quick cleanups</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Locations Section -->
+        <section class="popular-locations">
+            <div class="container">
+                <h2>Popular locations</h2>
+                <div class="location-grid">
+                    <a href="dallas.html" class="location-card" data-city="dallas">
+                        <img src="images/best-dallas-truck-wash.jpg" alt="Dallas Truck Wash - Semi Truck Getting Washed with Downtown Dallas Skyline">
+                        <div class="location-info">
+                            <h3>Dallas</h3>
+                            <p>15 locations</p>
+                        </div>
+                    </a>
+                    <a href="chicago.html" class="location-card" data-city="chicago">
+                        <img src="images/chicago-truck-wash.jpg" alt="Chicago Truck Wash - Semi Truck at Night with Chicago Skyline">
+                        <div class="location-info">
+                            <h3>Chicago</h3>
+                            <p>12 locations</p>
+                        </div>
+                    </a>
+                    <a href="houston.html" class="location-card" data-city="houston">
+                        <img src="images/houston-truck-wash.jpg" alt="Houston Truck Wash - Semi Truck with Downtown Houston Skyline">
+                        <div class="location-info">
+                            <h3>Houston</h3>
+                            <p>18 locations</p>
+                        </div>
+                    </a>
+                    <a href="atlanta.html" class="location-card" data-city="atlanta">
+                        <img src="images/best-atlanta-truck-wash.jpg" alt="Atlanta Truck Wash - Close-up of Semi Truck Wheels with Downtown Atlanta Skyline">
+                        <div class="location-info">
+                            <h3>Atlanta</h3>
+                            <p>10 locations</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Locations Section -->
+        <section class="featured-locations">
+            <div class="container">
+                <h2>Featured wash locations</h2>
+                <div class="featured-grid">
+                    <!-- Dallas Featured Location -->
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="images/best-dallas-truck-wash.jpg" alt="Blue Beacon Dallas - Green Semi Truck with Downtown Dallas Skyline">
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="featured-info">
+                            <div class="rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="score">4.8</span>
+                            </div>
+                            <h3>Blue Beacon - Dallas</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> 2462 N Stemmons Fwy</p>
+                            <p><i class="fas fa-clock"></i> Open 24/7</p>
+                            <p><i class="fas fa-phone"></i> (214) 631-4445</p>
+                            <div class="featured-price">
+                                From <span>$49.99</span> / wash
+                            </div>
+                            <a href="dallas.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Houston Featured Location -->
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="images/houston-truck-wash.jpg" alt="Houston Truck Wash Center">
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="featured-info">
+                            <div class="rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="score">4.7</span>
+                            </div>
+                            <h3>Houston Truck Wash Center</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> 8901 Market St</p>
+                            <p><i class="fas fa-clock"></i> Mon-Sat: 7AM-7PM</p>
+                            <p><i class="fas fa-phone"></i> (713) 674-9274</p>
+                            <div class="featured-price">
+                                From <span>$49.99</span> / wash
+                            </div>
+                            <a href="houston.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Atlanta Featured Location -->
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="images/best-atlanta-truck-wash.jpg" alt="Atlanta Truck Wash">
+                            <button class="favorite-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="featured-info">
+                            <div class="rating">
+                                <div class="stars">★★★★★</div>
+                                <span class="score">4.9</span>
+                            </div>
+                            <h3>Atlanta Truck Wash</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> 1750 Marietta Rd NW</p>
+                            <p><i class="fas fa-clock"></i> Mon-Sun: 5AM-11PM</p>
+                            <p><i class="fas fa-phone"></i> (404) 555-0321</p>
+                            <div class="featured-price">
+                                From <span>$49.99</span> / wash
+                            </div>
+                            <a href="atlanta.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#" onclick="document.querySelector('.hero-search').scrollIntoView({behavior: 'smooth'})">How it works</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Business</h4>
+                    <ul>
+                        <li><a href="list-location.html">List your location</a></li>
+                        <li><a href="contact.html">Partners</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SemiWash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
