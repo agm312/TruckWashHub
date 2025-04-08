@@ -93,12 +93,13 @@ main {
 
 /* Hero Search Section */
 .hero-search {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-truck-wash.jpg');
+    min-height: 500px;
+    padding: 60px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/best-dallas-truck-wash.jpg');
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
-    color: var(--white);
-    text-align: center;
+    color: white;
 }
 
 .hero-content {

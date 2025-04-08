@@ -553,8 +553,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // City directory initialization
 function initializeCityDirectory() {
+    // Only proceed if we're on a page with the cities container
     const citiesContainer = document.querySelector('.cities-container');
-    const citySearch = document.getElementById('citySearch');
+    if (!citiesContainer) return;
 
     // Create and populate city sections
     function createCitySection(cityName, locations) {
@@ -577,29 +578,11 @@ function initializeCityDirectory() {
         return section;
     }
 
-    // Populate all cities
-    function populateCities() {
-        citiesContainer.innerHTML = '';
-        Object.entries(cityDirectory).forEach(([city, locations]) => {
-            const cityName = city.charAt(0).toUpperCase() + city.slice(1);
-            citiesContainer.appendChild(createCitySection(cityName, locations));
-        });
-    }
-
-    // Search functionality
-    citySearch.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const cityElements = citiesContainer.querySelectorAll('.city-section');
-
-        cityElements.forEach(cityElement => {
-            const cityName = cityElement.querySelector('h2').textContent.toLowerCase();
-            const shouldShow = cityName.includes(searchTerm);
-            cityElement.style.display = shouldShow ? 'block' : 'none';
-        });
+    // Populate cities
+    Object.entries(cityDirectory).forEach(([city, locations]) => {
+        const cityName = city.charAt(0).toUpperCase() + city.slice(1);
+        citiesContainer.appendChild(createCitySection(cityName, locations));
     });
-
-    // Initial population
-    populateCities();
 }
 
 // Form handling
@@ -699,37 +682,34 @@ function initializeSearch() {
     const serviceSelect = document.querySelector('#serviceSelect');
     const searchBtn = document.querySelector('#searchButton');
 
-    console.log('Form elements:', {
-        form: searchForm,
-        location: locationInput,
-        date: dateInput,
-        service: serviceSelect,
-        button: searchBtn
-    });
-
-    // Set minimum date to today
-    const today = new Date().toISOString().split('T')[0];
-    if (dateInput) {
-        dateInput.min = today;
-        dateInput.value = today;
-    }
-
-    // Add click event listener to search button
-    if (searchBtn) {
-        searchBtn.addEventListener('click', function(e) {
-            console.log('Search button clicked');
-            e.preventDefault();
-            handleSearch();
+    // Initialize city search if it exists
+    const citySearch = document.getElementById('citySearch');
+    if (citySearch && document.querySelector('.cities-container')) {
+        citySearch.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const cityElements = document.querySelectorAll('.city-section');
+            
+            cityElements.forEach(cityElement => {
+                const cityName = cityElement.querySelector('h2').textContent.toLowerCase();
+                cityElement.style.display = cityName.includes(searchTerm) ? 'block' : 'none';
+            });
         });
     }
 
-    // Add submit event listener to form
+    // Ensure service select has correct options
+    if (serviceSelect) {
+        serviceSelect.innerHTML = `
+            <option value="">Service Type</option>
+            <option value="Local Wash">Local Wash</option>
+            <option value="Mobile Services">Mobile Services</option>
+            <option value="Fleet Service">Fleet Service</option>
+            <option value="Express Wash">Express Wash</option>
+        `;
+    }
+
+    // Add form submit handler
     if (searchForm) {
-        searchForm.addEventListener('submit', function(e) {
-            console.log('Form submitted');
-            e.preventDefault();
-            handleSearch();
-        });
+        searchForm.addEventListener('submit', handleSearch);
     }
 }
 
@@ -758,8 +738,8 @@ function handleSearch() {
         return;
     }
 
-    // If View Mobile Services is selected, redirect to mobile services page
-    if (service === 'View Mobile') {
+    // If Mobile Services is selected, redirect to mobile services page
+    if (service === 'Mobile Services') {
         window.location.href = '/mobile-services';
         return;
     }
@@ -796,12 +776,6 @@ function handleSearch() {
         showNotification(message, 'info', 10000);
     }
 }
-
-// Make sure search is initialized when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing search...');
-    initializeSearch();
-});
 
 function initializeFavorites() {
     const favoriteBtns = document.querySelectorAll('.favorite-btn');
