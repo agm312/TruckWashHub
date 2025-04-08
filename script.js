@@ -760,7 +760,7 @@ function handleSearch() {
 
     // If Mobile Service is selected, redirect to mobile service form
     if (service === 'Mobile Service') {
-        window.location.href = 'mobile-service.html';
+        window.location.href = '/mobile-service';
         return;
     }
 
@@ -775,7 +775,7 @@ function handleSearch() {
 
     if (cityMatch) {
         // Redirect to the city page with search parameters
-        const url = `${cityMatch}.html?service=${encodeURIComponent(service)}&date=${encodeURIComponent(date)}`;
+        const url = `/${cityMatch}?service=${encodeURIComponent(service)}&date=${encodeURIComponent(date)}`;
         console.log('Redirecting to:', url);
         window.location.href = url;
     } else {
