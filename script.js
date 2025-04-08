@@ -758,9 +758,9 @@ function handleSearch() {
         return;
     }
 
-    // If Mobile Service is selected, redirect to mobile service form
-    if (service === 'Mobile Service') {
-        window.location.href = '/mobile-service';
+    // If View Mobile Services is selected, redirect to mobile services page
+    if (service === 'View Mobile') {
+        window.location.href = '/mobile-services';
         return;
     }
 
