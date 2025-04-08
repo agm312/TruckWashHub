@@ -897,16 +897,16 @@ function initializeServiceTypes() {
             // Handle different service types
             switch(serviceType) {
                 case 'local':
-                    window.location.href = 'local-facilities.html';
+                    window.location.href = '/local-facilities';
                     break;
                 case 'mobile':
-                    window.location.href = 'mobile-service.html';
+                    window.location.href = '/mobile-service';
                     break;
                 case 'fleet':
-                    window.location.href = 'fleet-service.html';
+                    window.location.href = '/fleet-service';
                     break;
                 case 'express':
-                    window.location.href = 'express-wash.html';
+                    window.location.href = '/express-wash';
                     break;
             }
         });
