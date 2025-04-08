@@ -672,6 +672,45 @@ function showNotification(message, type = 'info', duration = 5000) {
     }, duration);
 }
 
+// Handle search form submission
+function handleSearch(e) {
+    if (e) e.preventDefault();
+    
+    const locationInput = document.querySelector('#locationInput');
+    const serviceSelect = document.querySelector('#serviceSelect');
+    const dateInput = document.querySelector('#dateInput');
+
+    // Get form values
+    const location = locationInput ? locationInput.value : '';
+    const service = serviceSelect ? serviceSelect.value : '';
+    const date = dateInput ? dateInput.value : '';
+
+    // Check if all fields are filled
+    if (!location || !service || !date) {
+        showNotification('Please fill in all search fields', 'error');
+        return;
+    }
+
+    // Handle different service types
+    switch(service) {
+        case 'Mobile Services':
+            window.location.href = '/mobile-service';
+            break;
+        case 'Fleet Service':
+            window.location.href = '/fleet-service';
+            break;
+        case 'Express Wash':
+            window.location.href = '/express-wash';
+            break;
+        case 'Local Wash':
+            // Redirect to local facilities page with the location parameter
+            window.location.href = `/local-facilities?location=${encodeURIComponent(location)}`;
+            break;
+        default:
+            showNotification('Please select a valid service type', 'error');
+    }
+}
+
 // Initialize search functionality
 function initializeSearch() {
     console.log('Initializing search...');
@@ -710,70 +749,6 @@ function initializeSearch() {
     // Add form submit handler
     if (searchForm) {
         searchForm.addEventListener('submit', handleSearch);
-    }
-}
-
-// Handle search form submission
-function handleSearch() {
-    console.log('Handling search...');
-    
-    const locationInput = document.querySelector('#locationInput');
-    const serviceSelect = document.querySelector('#serviceSelect');
-    const dateInput = document.querySelector('#dateInput');
-
-    if (!locationInput || !serviceSelect || !dateInput) {
-        console.error('Search form elements not found');
-        return;
-    }
-
-    const location = locationInput.value.trim().toLowerCase();
-    const service = serviceSelect.value;
-    const date = dateInput.value;
-
-    console.log('Search values:', { location, service, date });
-
-    // Check if all fields are filled
-    if (!location || !service || !date) {
-        showNotification('Please fill in all search fields', 'error');
-        return;
-    }
-
-    // If Mobile Services is selected, redirect to mobile services page
-    if (service === 'Mobile Services') {
-        window.location.href = '/mobile-services';
-        return;
-    }
-
-    // Check for city match
-    let cityMatch = null;
-    if (location.includes('dallas')) cityMatch = 'dallas';
-    else if (location.includes('chicago')) cityMatch = 'chicago';
-    else if (location.includes('houston')) cityMatch = 'houston';
-    else if (location.includes('atlanta')) cityMatch = 'atlanta';
-
-    console.log('City match:', cityMatch);
-
-    if (cityMatch) {
-        // Redirect to the city page with search parameters
-        const url = `/${cityMatch}?service=${encodeURIComponent(service)}&date=${encodeURIComponent(date)}`;
-        console.log('Redirecting to:', url);
-        window.location.href = url;
-    } else {
-        // Show no service notification with available cities
-        const message = `
-            <div class="notification-content">
-                <h3>No Service Available Yet</h3>
-                <p>We're sorry, but we don't currently have service in ${location}.</p>
-                <p>We're expanding quickly! Please check back soon or try searching in:</p>
-                <ul>
-                    <li>Dallas</li>
-                    <li>Chicago</li>
-                    <li>Houston</li>
-                    <li>Atlanta</li>
-                </ul>
-            </div>
-        `;
-        showNotification(message, 'info', 10000);
     }
 }
 
