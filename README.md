@@ -1,4 +1,4 @@
-# Semi Truck Wash Website
+# Truck Wash Hub Website
 
 A modern, SEO-optimized website for finding local semi truck wash locations and booking mobile wash services. Built with HTML, CSS, and JavaScript.
 
@@ -67,7 +67,7 @@ The site is optimized for the following keywords:
 - "local truck wash"
 - "mobile truck wash"
 - "truck wash near me"
-- City-specific keywords (e.g., "semi truck wash Dallas")
+- City-specific keywords (e.g., "truck wash Dallas")
 
 ## Maintenance
 
