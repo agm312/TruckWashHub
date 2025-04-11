@@ -1,5 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /local-facilities
+Allow: /express-wash
+Allow: /chicago
+Allow: /atlanta
+Allow: /houston
+Allow: /dallas
+Allow: /fleet-service
+Allow: /mobile-service
 
 # Sitemap
 Sitemap: https://truckwashhub.com/sitemap.xml 
